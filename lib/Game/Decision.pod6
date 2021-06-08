@@ -1,0 +1,11 @@
+=begin pod 
+
+=NAME    Game::Decision 
+=AUTHOR  The Holy Ghost 
+=VERSION 0.1.1
+
+=head1 Description
+
+A Statistics package of Decision Theory and Bayesian analysis.
+
+=end pod
