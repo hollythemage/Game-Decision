@@ -31,7 +31,7 @@ class Game::Decision::UtilityFunction {
 		return $utilityf1 < $utilityf2;
 	}
 
-	### A main preferred rewards system with three rewards to calculate
+	### A main preferred rewards algorithm with three rewards to calculate
 	### the utility functions (values of a gamble)
 	### r1 << r3 << r2 as rewards, find alpha in r3 ~= a*r1 + (1 - a)*r2
 	### and a*r3 + (1 - a) * r2 where r3 is preferred over r1 and r2 over r3
