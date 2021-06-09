@@ -2,6 +2,9 @@ use v6.c;
 
 use Game::Stats::DistributionPopulation;
 
+### Basically a utility function is a reward function, where the estimate
+### is the utility function itself
+
 ### Utility function for values which denote with a probability function
 ### as which consequences actually occur
 ### The value of a probability distribution would be given by utility E(P)[U(r)]
@@ -15,7 +18,7 @@ class Game::Decision::UtilityFunction {
 			
 	}
 
-	### E(P)[U(R)], for a single P
+	### E(P)[U(R)], for a single P of rewards set R 
 	method utlityf($distributionpopulation) {
 
 		return $distributionpopulation.Expectance;	
