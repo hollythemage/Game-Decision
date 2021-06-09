@@ -2,6 +2,8 @@ use v6.c;
 
 use Game::Stats::DistributionPopulation;
 
+use Game::Bayes::IntegralExp;
+
 ### Standard Loss Functions for calculating Loss in several ways
 
 class Game::Decision::StandardLossFunction {
@@ -38,4 +40,25 @@ class Game::Decision::StandardLossFunction {
 		}
 	} 
 		
+	### FIXME 
+	method zero-one-bayesian-expected-loss($theta1, $theta2, @list) {
+		my $p = Game::Bayes::IntegralExp;
+		my $loss1 = self.zero-one-loss($theta1, @list);
+		my $loss2 = self.zero-one-loss($theta2, @list);
+
+		my $d = Game::Stats::DistributionPopulation;
+		$d.add($loss1);
+		$d.add($loss2);
+
+		my $mu = $d.Expectance; 
+		my $sigma = sqrt($d.Variance); 
+
+		return $p.Probability($loss2, $loss1, $mu, $sigma);
+	} 
+		
+	method zero-one-bayesian-expected-loss-simple($theta1, @list) {
+
+		return (1 - self.zero-one-loss($theta1, @list)); 
+
+	}
 }
