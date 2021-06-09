@@ -28,6 +28,7 @@ class Game::Decision::StandardLossFunction {
 		return $distribution.Expectance;
 	}
 
+	### run this multiple times to see if $theta is in @list
 	method zero-one-loss($theta, @list) {
 		if (@list.Set{$theta}) {
 			return 1;
