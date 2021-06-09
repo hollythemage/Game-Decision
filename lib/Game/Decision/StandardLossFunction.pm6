@@ -39,7 +39,8 @@ class Game::Decision::StandardLossFunction {
 			return 1;
 		}
 	} 
-		
+	
+	### of zero-one loss, Bayesian expected loss	
 	method zero-one-bayesian-expected-loss($theta1, $theta2, @list) {
 		my $p = Game::Bayes::IntegralExp;
 		my $loss1 = self.zero-one-loss($theta1, @list);
@@ -55,9 +56,25 @@ class Game::Decision::StandardLossFunction {
 		return $p.Probability($loss2, $loss1, $mu, $sigma);
 	} 
 		
+	### of zero-one loss, Bayesian expected loss
+	### simplificated method
 	method zero-one-bayesian-expected-loss-simple($theta1, @list) {
 
 		return (1 - self.zero-one-loss($theta1, @list)); 
 
 	}
+
+	### predicition of future random variables with 2 conditional
+	### probabilities where condp == P(b|a), a unknown
+	method predictive-problem-loss($loss1, $loss2, $condp1, $condp2) {
+		my $p = Game::Bayes::IntegralExp;
+		my $d = Game::Stats::DistributionPopulation;
+		$d.add($condp1*$loss1);
+		$d.add($condp2*$loss2);
+
+		my $mu = $d.Expectance; 
+		my $sigma = sqrt($d.Variance); 
+
+		return $p.Probability($condp2*$loss2, $condp1*$loss1, $mu, $sigma);
+	} 
 }
