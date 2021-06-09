@@ -40,7 +40,6 @@ class Game::Decision::StandardLossFunction {
 		}
 	} 
 		
-	### FIXME 
 	method zero-one-bayesian-expected-loss($theta1, $theta2, @list) {
 		my $p = Game::Bayes::IntegralExp;
 		my $loss1 = self.zero-one-loss($theta1, @list);
