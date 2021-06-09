@@ -18,6 +18,26 @@ class Game::Decision::UtilityFunction {
 			
 	}
 
+	### API method :
+	### E(P)[U(R)], for a probability distribution set P of rewards set R
+	### @ufs is a list of distributionpopulations (See Game::Stats)
+	### This method returns a global estimate
+	method utilityfunction(@ufs) {
+		my $d = Game::Stats::DistributionPopulation;
+		
+		for @ufs -> $distribution {
+			$d.add(self.utilityf($distribution));
+		}
+
+		my $sum = 0.0;
+		for $d.population -> $p {
+			$sum += $p;
+		}
+
+		return $sum;
+	}			
+
+	### API method :
 	### E(P)[U(R)], for a single P of rewards set R 
 	method utlityf($distributionpopulation) {
 
