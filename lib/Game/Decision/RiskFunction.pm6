@@ -13,4 +13,9 @@ class Game::Decision::RiskFunction is Game::Bayes::RiskFunction {
 
 	}
 
+	### Risk R(theta,delta) = E[L(theta,delta(X))] = P(theta)(delta(X))
+	### which is the incorrect decision 
+	multi method risk-of-zero-one-loss() {
+		return $.hypothesis.population.Expectance;
+	}
 }

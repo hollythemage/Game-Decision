@@ -29,11 +29,12 @@ class Game::Decision::StandardLossFunction {
 	}
 
 	### run this multiple times to see if $theta is in @list
+	### returns 0 if $theta is in @list
 	method zero-one-loss($theta, @list) {
 		if (@list.Set{$theta}) {
-			return 1;
-		} else {
 			return 0;
+		} else {
+			return 1;
 		}
 	} 
 		
