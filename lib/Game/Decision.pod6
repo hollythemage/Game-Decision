@@ -10,6 +10,8 @@ A Statistics package of Decision Theory and Bayesian analysis.
 
 =head2 UtilityFunction.pm6
 
+method utilityf : E(P)[U(R)], for a single P (distribution) of rewards set R.
+
 method utilityfunction(@ufs) : creates a utility over set P with this equal to E[U(r)]
 where @ufs contains the distribution elements e.g. 
 Game::Stats::DistributionPopulation.population's then returns the estimate.
