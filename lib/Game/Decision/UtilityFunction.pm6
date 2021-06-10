@@ -60,14 +60,26 @@ class Game::Decision::UtilityFunction {
 	### and a*r3 + (1 - a) * r2 where r3 is preferred over r1 and r2 over r3
 	### U(r1) == 0, U(r2) == 1 in solving the equation
 	### The solving of 2 different U(r3) is below these 2 methods
-	### API method :
+	### note the different alpha values
+
+	### API method r3 << r1, calculate U(r3) utility function
+	method three-rewards-solving-U3-alpha1($alpha1) {
+		return - (1 - $alpha1) / $alpha1; ### returns Ur3
+	}
+ 
+	### API method r2 << r3, calculate U(r3) utility function
+	method three-rewards-solving-U3-alpha2($alpha2) {
+		return 1 / (1 - $alpha2); ### returns Ur3
+	}
+
+	### yields U(r1) == 0
 	method three-rewards-solving-U1($alpha1, $Ur3) { ## Ur3 <-> alpha1
 		return $alpha1 * $Ur3 + (1 - $alpha1);
 	}
 		
-	### API method :
+	### yields U(r2) == 1
 	method three-rewards-solving-U2($alpha2, $Ur3) { ## Ur3 <-> alpha2
-		return 1 - (1 - $alpha2) * $Ur3;  
+		return (1 - $alpha2) * $Ur3;  
 	}
 		
 	### the first function denotes r3 << r1
@@ -77,14 +89,6 @@ class Game::Decision::UtilityFunction {
 	### the second function denotes r2 << r3
 	method three-rewards-solving-alpha2($r2,$r3) {
 		return - $r2 / ($r3 - $r2); ### alpha
-	}
-
-	method three-rewards-solving-U3-alpha1($alpha1) {
-		return - (1 - $alpha1) / $alpha1; ### Ur3
-	}
- 
-	method three-rewards-solving-U3-alpha2($alpha2) {
-		return 1 / (1 - $alpha2); ### Ur3
 	}
 
 }

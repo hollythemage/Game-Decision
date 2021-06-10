@@ -8,4 +8,21 @@
 
 A Statistics package of Decision Theory and Bayesian analysis.
 
+=head2 UtilityFunction.pm6
+
+method utilityfunction(@ufs) : creates a utility over set P with this equal to E[U(r)]
+where @ufs contains the distribution elements e.g. 
+Game::Stats::DistributionPopulation.population's then returns the estimate.
+This is a multiple reward system. This function is undocumented.
+
+method three-rewards-solving-U3-alpha1($alpha1) and  
+method three-rewards-solving-U3-alpha1($alpha2) : by calculating both
+alphas one can derive both U(r3) where r1 << r3 << r2 (<< == is preferred over.)
+U(r1) == 0 and U(r2) == 1 in this case.
+
+=head3 StandardLossFunction.pm6
+
+Figures several loss functions to be used for e.g. risk in games,
+squared-error loss,  "0-1" loss and Bayesian loss (explicitly for "0-1" loss.)
+
 =end pod

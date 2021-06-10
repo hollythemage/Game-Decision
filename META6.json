@@ -3,7 +3,7 @@
         "name" : "Game::Decision",
         "auth" : "CPAN:HOLYGHOST",
         "api" : "1",
-        "version" : "0.1.4",
+        "version" : "0.1.5",
         "description" : "Decision Theory package.",
         "authors" : [ "The Holy Ghost" ],
         "license" : "General Public License 3, Artistic-2.0",
@@ -23,5 +23,5 @@
         "tags": [
           "Game", "Decision"
         ],
-        "source-url" : "http://cpan.metacpan.org/authors/id/H/HO/HOLYGHOST/Perl6/Game-Decision-0.1.4.tar.gz"
+        "source-url" : "http://cpan.metacpan.org/authors/id/H/HO/HOLYGHOST/Perl6/Game-Decision-0.1.5.tar.gz"
     }
