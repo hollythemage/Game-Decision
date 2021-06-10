@@ -61,13 +61,13 @@ class Game::Decision::UtilityFunction {
 	### U(r1) == 0, U(r2) == 1 in solving the equation
 	### The solving of 2 different U(r3) is below these 2 methods
 	### API method :
-	method three-rewards-solving-U1($alpha1, $Ur3) {
+	method three-rewards-solving-U1($alpha1, $Ur3) { ## Ur3 <-> alpha1
 		return $alpha1 * $Ur3 + (1 - $alpha1);
 	}
 		
 	### API method :
-	method three-rewards-solving-U2($alpha2, $Ur3) {
-		return (1 - $alpha2) * $Ur3;  
+	method three-rewards-solving-U2($alpha2, $Ur3) { ## Ur3 <-> alpha2
+		return 1 - (1 - $alpha2) * $Ur3;  
 	}
 		
 	### the first function denotes r3 << r1
