@@ -8,8 +8,8 @@ class Game::Decision::Strategy is Game::Bayes::Strategy {
 	has @.strategypopulation;
 
 	submethod BUILD(:@lossfuncs) {
-		@.population = @lossfuncs; ### LossFunction instances
-		@.strategypopulation = Game::Stats::Population.new;
+		self.population = @lossfuncs; ### LossFunction instances
+		self.strategypopulation = Game::Stats::Population.new;
 	}
 
 }

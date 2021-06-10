@@ -9,7 +9,7 @@ class Game::Decision::RiskFunction is Game::Bayes::RiskFunction {
 
 	submethod BUILD(:@ddistribution) {
 		
-		$.hypothesis = Game::Bayes::Hypothesis.new(distribution => @ddistribution);
+		self.hypothesis = Game::Bayes::Hypothesis.new(distribution => @ddistribution);
 
 	}
 

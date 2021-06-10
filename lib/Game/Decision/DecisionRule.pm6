@@ -6,7 +6,7 @@ class Game::Decision::DecisionRule is Game::Bayes::DecisionRule {
 	### has $.decisions;
 
 	submethod BUILD(:@decisiondistrib) {
-		@.population = @decisiondistrib;
+		self.population = @decisiondistrib;
 	}
 
 }

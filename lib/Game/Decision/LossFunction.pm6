@@ -9,7 +9,7 @@ class Game::Decision::LossFunction is Game::Bayes::LossFunction {
 
 	submethod BUILD(:@ddistribution) {
 		
-		$.hypothesis = Game::Bayes::Hypothesis.new(@ddistribution);
+		self.hypothesis = Game::Bayes::Hypothesis.new(@ddistribution);
 
 	}
 
