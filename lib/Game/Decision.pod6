@@ -14,8 +14,9 @@ method utilityf : E(P)[U(R)], for a single P (distribution) of rewards set R.
 
 method utilityfunction(@ufs) : creates a utility over set P with this equal to E[U(r)]
 where @ufs contains the distribution elements e.g. 
-Game::Stats::DistributionPopulation.population's then returns the estimate.
-This is a multiple reward system. This function is undocumented.
+Game::Stats::DistributionPopulation.population's then returns the sum of the
+estimates.
+These iare for a multiple reward system. The last function is undocumented.
 
 method three-rewards-solving-U3-alpha1($alpha1) and  
 method three-rewards-solving-U3-alpha1($alpha2) : by calculating both

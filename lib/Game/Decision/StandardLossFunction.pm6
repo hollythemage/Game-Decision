@@ -1,6 +1,7 @@
 use v6.c;
 
 use Game::Stats::DistributionPopulation;
+use Game::Numeric::SquaredErrorLossIntegral;
 
 ### Standard Loss Functions for calculating Loss in several ways
 
@@ -60,7 +61,9 @@ class Game::Decision::StandardLossFunction {
 
 	### predicition of future random variables with 2 conditional
 	### probabilities where condp == P(b|a), a unknown
-	method predictive-problem-loss($loss1, $loss2, $condp1, $condp2) {
-		### FIXME, needs integral package (Game::Numeric)
+	### $b1 and $b2 are the bounds of the integral
+	method predictive-problem-squared-error-loss($b1, $b2, $theta) {
+		my $int = Game::Numeric::SquaredErrorLossIntegral.new;
+		return $int.calculate-integral($b1, $b2, $theta);	
 	} 
 }
