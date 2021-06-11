@@ -60,11 +60,11 @@ class Game::Decision::StandardLossFunction {
 	}
 
 	### predicition of future random variables with 2 conditional
-	### probabilities where condp == P(theta|y), with y unknown
+	### probabilities where condp == P(theta(i)|y), with y unknown
 	### $b1 and $b2 are the bounds of the integral
 	### use only for squared-error loss
-	method predictive-problem-squared-error-loss($theta1, $theta2, $condp,  $a) {
+	method predictive-problem-squared-error-loss($theta1, $theta2, $condp1, $condp2,  $a) {
 		my $int = Game::Numeric::SquaredErrorLossIntegral.new;
-		return $int.calculate-integral-in-theta($theta1, $theta2, $condp,  $a);	
+		return $int.calculate-integral-in-theta($theta1, $theta2, $condp1, $condp2,  $a);	
 	} 
 }
