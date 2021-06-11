@@ -65,6 +65,6 @@ class Game::Decision::StandardLossFunction {
 	### use only for squared-error loss
 	method predictive-problem-squared-error-loss($theta1, $theta2, $condp1, $condp2,  $a) {
 		my $int = Game::Numeric::SquaredErrorLossIntegral.new;
-		return $int.calculate-integral-in-theta($theta1, $theta2, $condp1, $condp2,  $a);	
+		return ($int.calculate-integral-in-theta($theta1, $theta2, $condp1, $condp2,  $a));	
 	} 
 }
