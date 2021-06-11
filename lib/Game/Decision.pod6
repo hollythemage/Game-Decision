@@ -31,6 +31,6 @@ squared-error loss,  "0-1" loss and Bayesian loss (explicitly for "0-1" loss.)
 method predictive-problem-squared-error-loss($b1, $b2, $condp1, $condp2, $theta) : calculates
 the Int(b2,b1)L($theta,$a)g(theta|y)dtheta (using the theta integral
 functionality) where y is unknown in P($theta(i)|y). g($theta(i)|y) is 
-$condp(i).
+$condp(i). This is an Bayesian expected loss.
 
 =end pod
