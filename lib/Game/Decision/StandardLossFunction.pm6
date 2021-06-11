@@ -60,7 +60,7 @@ class Game::Decision::StandardLossFunction {
 	}
 
 	### predicition of future random variables with 2 conditional
-	### probabilities where condp == P(theta|theta0), with theta0 unknown
+	### probabilities where condp == P(theta|y), with y unknown
 	### $b1 and $b2 are the bounds of the integral
 	### use only for squared-error loss
 	method predictive-problem-squared-error-loss($theta1, $theta2, $a) {
