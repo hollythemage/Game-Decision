@@ -28,8 +28,8 @@ U(r1) == 0 and U(r2) == 1 in this case.
 Figures several loss functions to be used for e.g. risk in games,
 squared-error loss,  "0-1" loss and Bayesian loss (explicitly for "0-1" loss.)
 
-method predictive-problem-squared-error-loss($b1, $b2, $theta) : calculates
+method predictive-problem-squared-error-loss($b1, $b2, $condp, $theta) : calculates
 the Int(b2,b1)L($theta,$a)g(theta|y)dtheta (using the theta integral
-functionality) where y is unknown in P($theta(i)|y).
+functionality) where y is unknown in P($theta(i)|y). g($theta|y) is $condp.
 
 =end pod
